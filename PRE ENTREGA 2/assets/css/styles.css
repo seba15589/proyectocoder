@@ -1,0 +1,401 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.bodyindex{
+    background-color: rgb(172, 167, 167);
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr, 1fr;
+    grid-template-rows: 80px 100px 1fr 1fr 1fr ;
+    grid-template-areas: "nav nav"
+                         "header header"
+                         "autos autos"
+                         "opi opi"
+                         "footer footer"
+                        ;
+}
+.navpadre{
+    display: flex;
+}
+.logo{
+    width: 64px;
+}
+nav{
+    grid-area: nav;
+}
+.navegador{
+    background-color:cornflowerblue;
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+    font-family:sans-serif;
+    text-align: center;
+    padding: 10px;     
+    display: flex; 
+    justify-content: space-between;    
+}
+
+.navegador > ul {
+    list-style: none;
+    display: flex;
+    justify-content: end;
+}
+.navegador > ul > li{
+    position: relative;
+}
+.navegador > ul > li:hover ul{
+   max-height: 300px;
+}
+.navegador > ul  li  a {
+    display: block;
+    color: aliceblue;
+    list-style: none;
+    font-size: 20px;
+    padding: 20px;
+    text-decoration: none;
+}
+.navegador > ul > li > ul {
+    max-height: 0    ; 
+    overflow: hidden;
+    position: absolute;
+    list-style-type: none;
+    background-color: cornflowerblue;
+    left: -12px;    
+}
+@media(min-width:577px){
+    .fa-bars{
+        display: none;
+    }
+}
+
+@media(max-width:576px) {
+    .navegador{
+        justify-content: space-between;
+    }
+    .navegador > .fa-bars {
+    display: block;
+    color: aliceblue;
+    font-size: 30px;
+    padding: 20px;
+    }
+    .navegador > .fa-bars:hover + ul {
+        left: 0;
+    }
+    .navegador > ul {
+       position: fixed;
+       flex-direction: column;
+       background-color: cornflowerblue;
+       width: 250px;
+       height: 100vh;
+       justify-content: start;
+       padding-top: 60px;
+       align-items: center;
+       left: -300px;
+       transition: 0.2;
+    }
+    .navegador > ul:hover {
+        left: 0;
+    }
+    .logo{
+        position: static;
+    }
+   
+}
+
+.header{
+    grid-area: header;
+    background-image: url(../images/abstract-dark-blurred-background-smooth-gradient-texture-color-shiny-bright-website-pattern-banner-header-or-sidebar-graphic-art-image.jpg);
+    color:crimson;
+    font-size: 35px;
+    font-family:sans-serif;
+    text-decoration: solid;
+    height: 100px;;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    grid-area: autos;
+}
+.autos{
+    background-color: cornflowerblue;
+    color: dimgrey;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration:solid;
+    text-align: center;
+    width: 500px;
+    border: solid 2px;
+    padding: 10px;
+    
+    }
+.autos__titulo{
+    color:crimson;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+ }
+.autos__img{
+    width: 100%;
+}
+.unidadespadre{
+    flex-wrap: wrap;
+    display: flex;
+    padding: 20px;
+    justify-content:space-between;
+}
+.opinionespadre{
+    flex-wrap: wrap;
+    grid-area: opi ;
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+}
+.opiniones{
+    background-color: cornflowerblue;
+    color:darkred;
+    font-size: 25px;
+    font-style: italic;
+    width: 400px;
+}
+.opiniones__titulo{
+    background-color: black;
+    color: blue;
+    font-style: normal;
+    text-align: center;
+}
+.animation{
+    transition: 20s;
+}
+/* Footer */
+footer {
+    grid-area: footer;
+    background-color:#A31925; 
+    color: white;   
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content:flex-start;
+    font-size: 15px;
+}
+footer > .compania{
+  margin: 10px;  
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+footer > .sucursales{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items:flex-end ;
+    justify-items: end;
+}
+@media(max-widht:576px){
+    footer {
+        display:flex;
+        flex-direction:column;       
+        flex-wrap: wrap; 
+        }
+    footer > .compania{
+        display: flex;
+    }
+    footer > .sucursales{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: end;
+    }
+    }
+footer > .sucursales > .sucursal{
+    margin: 10px;
+}
+footer > .sucursales> .sucursal> h3{
+    margin: 10px 0px;
+  }
+footer > .sucursales> .sucursal > ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer > .sucursales > .sucursal > ul>li> a>i {
+    margin-right: 10px;
+}
+
+/*Fin Footer*/
+.contactopadre{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+.formulario{
+    width: 500px;
+    height: 500px;
+    color: black;
+    border: 1px solid;
+    line-height: 40px;
+    justify-content:stretch;
+    align-items: center;
+}
+.mapa{
+    display: block;
+    margin-left: 400px;
+    margin-top: 100px;
+}
+.seccion{
+    background-color: burlywood;
+    color: brown;
+    font-size: 30px;
+    font-family: sans-serif;
+    text-decoration: solid;
+    text-align:left;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    
+}
+.tabla{
+    border: 1px solid;
+    padding: 20px;
+    margin: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    text-align: center;
+    background-color: chocolate;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-align: center;
+    width: fit-content;
+    height: 250px;
+   
+    }
+
+th,td{
+    border: solid 1px;
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    text-align: center;
+    background-color: chocolate;
+}
+.financiacionparrafo{
+    color: chocolate;
+    font-family: serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    ;
+}
+.financiacionpadre{
+    display: flex;
+    flex-direction: row;
+}
+.logobanco{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+
+}
+@media(max-width:576px) {
+    .financiacionpadre{
+        flex-direction: column;
+    }
+    .logobanco{
+        flex-direction: row;
+        padding-left: 100px;
+    }
+}
+.padrequienes{
+    display: flex;
+    justify-content: space-around;
+}
+.texto{
+    font-size: x-large;
+    font-family: sans-serif;
+    color: darkcyan;
+    width: 600px;
+}
+.formulario2{
+    font-family: 'Quicksand', sans-serif;
+    padding: 30px;
+    background-color: cornflowerblue;
+    max-width: 900px;
+    margin: 10px auto;
+    display: grid;
+    gap: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 0px 5px #A0A0A0, inset 0px 10px 27px -8px #141414, inset 0px -10px 27px -8px #A31925, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 0px 0px 5px #A0A0A0, inset 0px 10px 27px -8px #141414, inset 0px -10px 27px -8px #A31925, 5px 5px 15px 5px rgba(0,0,0,0);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 60px ;
+    grid-template-areas: "titulo titulo"
+                         "nomApell email"
+                         "tel  asunto"
+                         "mensaje mensaje"
+                         "btn   btn"
+                          ;
+}
+.formulario2 h2:nth-child(1){
+    grid-area: titulo;
+    color: white;
+    font-size: 50px;
+}
+.formulario2 label:nth-child(2){
+    grid-area: nomApell;
+}
+.formulario2 label:nth-child(3){
+    grid-area: email;
+}
+.formulario2 label:nth-child(4){
+    grid-area: tel;
+}
+.formulario2 label:nth-child(5){
+    grid-area: asunto;
+}
+.formulario2 label:nth-child(6){
+    grid-area: mensaje;
+}
+.formulario2 button:nth-child(7){
+    grid-area: btn;
+    background-color: grey;
+    border: 0;
+    color: aliceblue;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 10px;
+    margin-top: 20px;
+    font-family: 'Quicksand', sans-serif;
+    ;
+}
+.formulario2 label{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: aliceblue;
+    }
+.formulario2 > label > input , .formulario2 > label > textarea {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    border-bottom: 1px solid white;
+}
+.formulario2 > label > textarea{
+    height: 70px;
+}
+.formulario2 > label > input:focus{
+    color: aliceblue;
+}
+
+
